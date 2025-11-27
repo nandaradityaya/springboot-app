@@ -11,7 +11,7 @@ pipeline {
         stage('Containerized Apps') {
             steps {
                 sh'''
-                docker build -t nandaradityaya/springboot-app .
+                docker build -t nandaradityaya/springboot-app:v3 .
                 '''
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Push to Registry') {
             steps {
                 sh'''
-                docker push nandaradityaya/springboot-app
+                docker push nandaradityaya/springboot-app:v3
                 '''
             }
         }
